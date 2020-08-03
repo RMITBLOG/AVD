@@ -1,0 +1,85 @@
+<#	
+	.notes
+	===========================================================================
+	 created on:   	18/11/2019 00:58
+	 created by:   	ryan mangan
+	 organization: 	RyanMangansitblog.com
+ 	
+	===========================================================================
+	.description
+		a description of the file.
+#>
+
+start-sleep -seconds 3
+
+Write-Host "Starting test Now!"
+
+# url of fishbowl web app 
+
+$fishbowlsite = "https://testdrive-archive.azurewebsites.net/performance/fishbowl/"
+
+# launch fishbowl workload, wait, and close 
+
+$fishbowl = start-process "c:\program files (x86)\google\chrome\application\chrome.exe" -argumentlist "--start-maximized", "--no-default-browser-check", "--no-first-run", $fishbowlsite -passthru
+start-sleep -seconds 30
+get-process chrome | foreach-object { $_.closemainwindow() | out-null } | stop-process -force
+
+
+# url of cube web app 
+
+$cubessite = "http://luic.github.io/webgl-performance-benchmark/benchmark/cubes.html"
+
+# launch cube workload, wait, and close 
+
+$cube = start-process "c:\program files (x86)\google\chrome\application\chrome.exe" -argumentlist "--start-maximized", "--no-default-browser-check", "--no-first-run", $cubessite -passthru
+start-sleep -seconds 30
+get-process chrome | foreach-object { $_.closemainwindow() | out-null } | stop-process -force
+
+
+# url of vr test 
+
+$vrsite = "https://mixedreality.mozilla.org/sechelt/"
+
+# launch vr workload, wait, and close 
+
+$vr = start-process "c:\program files (x86)\google\chrome\application\chrome.exe" -argumentlist "--start-maximized", "--no-default-browser-check", "--no-first-run", $vrsite -passthru
+start-sleep -seconds 30
+get-process chrome | foreach-object { $_.closemainwindow() | out-null } | stop-process -force
+
+
+# url of aquarium test 
+
+$aquarium = "https://webglsamples.org/aquarium/aquarium.html"
+
+# launch aquarium workload, wait, and close 
+
+$aq = start-process "c:\program files (x86)\google\chrome\application\chrome.exe" -argumentlist "--start-maximized", "--no-default-browser-check", "--no-first-run", $aquarium -passthru
+start-sleep -seconds 30
+get-process chrome | foreach-object { $_.closemainwindow() | out-null } | stop-process -force
+
+
+# url of cubemap test 
+
+$cb1 = "https://webglsamples.org/dynamic-cubemap/dynamic-cubemap.html"
+
+# launch cube workload, wait, and close 
+
+$cube = start-process "c:\program files (x86)\google\chrome\application\chrome.exe" -argumentlist "--start-maximized", "--no-default-browser-check", "--no-first-run", $cb1 -passthru
+start-sleep -seconds 30
+get-process chrome | foreach-object { $_.closemainwindow() | out-null } | stop-process -force
+
+# url of grass test 
+
+$grass1 = "https://webglsamples.org/field/field.html"
+
+# launch grass workload, wait, and close 
+
+$grass = start-process "c:\program files (x86)\google\chrome\application\chrome.exe" -argumentlist "--start-maximized", "--no-default-browser-check", "--no-first-run", $grass1 -passthru
+start-sleep -seconds 30
+get-process chrome | foreach-object { $_.closemainwindow() | out-null } | stop-process -force
+
+Write-Host "Test Finished"
+
+
+
+
