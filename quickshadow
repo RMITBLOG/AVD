@@ -1,0 +1,11 @@
+#created by Ryan Mangan on the 09 of November 2019 @ 17:12
+# enter the host name of the sessionhost
+query session /server:<hostname>
+pause
+Write-Host "**** enter session id" -ForegroundColor Green
+$SessionID = Read-Host 
+Write-Host "**** hostname" -ForegroundColor Green
+$rdhost = Read-Host 
+Write-Host "***** running script **********" -ForegroundColor Cyan
+start-sleep 1
+mstsc /v:$rdhost /shadow:$sessionID /Noconsentprompt
