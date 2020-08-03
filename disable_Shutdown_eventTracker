@@ -1,0 +1,5 @@
+1. Start regedit.exe.
+2. Go to HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability.
+3. Double-click ShutdownReasonUI, and set it to 1 to enable or 0 to disable.
+4. Click OK.
+Close regedit.
