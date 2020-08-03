@@ -1,0 +1,10 @@
+while ($true) {
+    Write-host
+    get-date
+    get-rdssessionhost -tenant fisg-ld -HostPoolName "<hostpool name>" | select-object -Property sessionhostname,status,sessions
+    Start-Sleep -Seconds 5  
+    Write-Host
+    Write-Host
+    Write-Host
+    Write-Host
+} 
