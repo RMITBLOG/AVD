@@ -9,6 +9,13 @@
 	.DESCRIPTION
 		This simple script is to be used with Azure Custom Scrpt Extentions for each session host. This disables the Acrylic Background On Logon.
 
+Registry Hive	HKEY_LOCAL_MACHINE
+Registry Path	Software\Policies\Microsoft\Windows\System
+Value Name	DisableAcrylicBackgroundOnLogon
+Value Type	REG_DWORD
+Enabled Value	1
+Disabled Value	0
+	
 	
 #>
 
